@@ -84,35 +84,9 @@ From operators monitoring live incidents to users navigating crowded venues, the
 
 - ▶️ Run Locally
 
-npm run dev
+    npm run dev
 
-Open: http://localhost:3000
-
-📦 Production Build
-
-npm run build
-npm start
-
-📁 Project Structure
-
-stadium-intelligence/
-├── app/
-│ ├── alerts/
-│ ├── navigation/
-│ ├── heatmaps/
-│ ├── analytics/
-│ ├── chat/
-│ ├── layout.tsx
-│ └── globals.css
-├── components/
-│ └── SideBar.tsx
-| |__ InputBar.tsx
-├── public/
-│ └── assets/
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── README.md
+    Open: http://localhost:3000
 
 ### 🧩 UI Patterns
 Accent-bar cards
@@ -124,7 +98,9 @@ Floating action buttons
 Route	Description
 /alerts	Live Alerts Dashboard
 /navigation	Route Planner
-/settings	User Preferences
+/chat	AI Chat Assistant
+/heatmaps	Crowd Heatmaps
+/analytics	Analytics Dashboard
 
 ### 🌟 Highlights
 - ⚡ Real-time updates
