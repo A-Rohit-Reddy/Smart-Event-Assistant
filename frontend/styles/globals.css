@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #fecd45;
+  --color-accent: #2568fb;
+}
+
+/* 🌌 BASE BACKGROUND */
+body {
+  background: radial-gradient(circle at 30% 30%, rgba(37, 104, 251, 0.08), transparent 40%),
+              radial-gradient(circle at 70% 60%, rgba(254, 205, 69, 0.08), transparent 40%),
+              linear-gradient(to bottom, #000000, #0a0f1c);
+  background-attachment: fixed;
+  color: #f3f4f6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 🌑 EDGE VIGNETTE (THIS FIXES YOUR PROBLEM) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 60%, rgba(0, 0, 0, 0.7));
+  z-index: 0;
+}
+
+/* ✨ SUBTLE GRID (TECH FEEL) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 🌟 GLOW EFFECTS */
+.glow-primary {
+  box-shadow: 0 0 25px rgba(254, 205, 69, 0.18);
+  transition: all 0.3s ease;
+}
+
+.glow-primary:hover {
+  box-shadow: 0 0 40px rgba(254, 205, 69, 0.35);
+}
+
+/* 🔵 BLUE GLOW FOR INTERACTIVE ELEMENTS */
+.glow-accent {
+  box-shadow: 0 0 20px rgba(37, 104, 251, 0.25);
+}
+
+/* 🧊 GLASS CARD (USE FOR RESULT PANEL) */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 🎬 RESULT ANIMATION */
+.result-panel-enter {
+  animation: fade-in-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide scrollbar but keep scroll */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: none;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease;
+}
+
